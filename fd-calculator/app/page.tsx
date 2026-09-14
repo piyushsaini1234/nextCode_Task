@@ -176,7 +176,7 @@ export default function FDCalculator() {
                   tick={{ fontSize: 10, fill: "#888" }} axisLine={false} tickLine={false} width={45}
                   tickFormatter={(v) => v >= 100000 ? `₹${(v / 100000).toFixed(0)}L` : `₹${(v / 1000).toFixed(0)}k`}
                 />
-                <Tooltip formatter={(v: number) => [fmt(v), "Maturity"]} contentStyle={{ fontSize: 12 }} />
+                <Tooltip  formatter={(value) => [fmt(Number(value ?? 0)), "Maturity"]} contentStyle={{ fontSize: 12 }} />
                 <Bar dataKey="amount" radius={[4, 4, 0, 0]}>
                   {data.map((_, i) => (
                     <Cell key={i} fill={i === t - 1 ? "#7a5c3c" : "#d4bfaa"} />
